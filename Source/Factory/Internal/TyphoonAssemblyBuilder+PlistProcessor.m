@@ -12,6 +12,10 @@
 #import "TyphoonAssemblyBuilder+PlistProcessor.h"
 #import "TyphoonIntrospectionUtils.h"
 
+#ifdef TARGET_OS_TV
+#import <UIKit/UIDevice.h>
+#endif
+
 @implementation TyphoonAssemblyBuilder (PlistProcessor)
 
 + (id)buildAssembliesFromPlistInBundle:(NSBundle *)bundle
@@ -40,7 +44,7 @@
     NSArray *names = nil;
     
     NSDictionary *bundleInfoDictionary = [bundle infoDictionary];
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE || TARGET_OS_TV
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         names = bundleInfoDictionary[@"TyphoonInitialAssemblies(iPad)"];
     } else {
