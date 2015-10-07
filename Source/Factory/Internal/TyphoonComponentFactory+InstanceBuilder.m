@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#import <Typhoon/Typhoon.h>
+#import "Typhoon.h"
 #import <Typhoon/TyphoonInstancePostProcessor.h>
 #import "TyphoonLinkerCategoryBugFix.h"
 #import "TyphoonInjectionContext.h"
